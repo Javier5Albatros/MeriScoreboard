@@ -1,0 +1,8 @@
+name: MeriScoreboard
+version: '${version}'
+main: es.meriland.MeriScoreboard
+api-version: 1.17
+prefix: [ MeriScoreboard ]
+authors: [ Abortos ]
+description: Scoreboard PAPI intergration for Meriland
+website: meriland.es

@@ -10,6 +10,5 @@ public class PlayerQuitListener implements Listener {
     @EventHandler
     public void onQuit(PlayerQuitEvent event) {
         event.getPlayer().setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
-        MeriScoreboard.scoreboardDataMap.remove(event.getPlayer().getUniqueId());
     }
 }

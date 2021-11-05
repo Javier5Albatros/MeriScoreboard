@@ -6,3 +6,7 @@ prefix: [ MeriScoreboard ]
 authors: [ Abortos ]
 description: Scoreboard PAPI intergration for Meriland
 website: meriland.es
+depend: [PlaceholderAPI]
+commands:
+  scoreboardreload:
+    description: Pene de mono

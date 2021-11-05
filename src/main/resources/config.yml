@@ -1,0 +1,8 @@
+scoreboard: # Max 15 lines
+  title: '&8>>&b&lDesafíos &8<<'
+  lines:
+    - 'Progreso diario: %goldenchallenges_progress_DAILY%%'
+    - ''
+    - 'Progreso semanal: %goldenchallenges_progress_WEEKLY%%'
+    - ' '
+    - 'Progreso mensual: %goldenchallenges_progress_MONTHLY%%'

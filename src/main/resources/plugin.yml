@@ -9,4 +9,9 @@ website: meriland.es
 depend: [PlaceholderAPI]
 commands:
   scoreboardreload:
-    description: Pene de mono
+    description: Reload config
+  togglescoreboard:
+    description: Toggle Scoreboard
+    aliases:
+      - 'score'
+      - 'togglesc'

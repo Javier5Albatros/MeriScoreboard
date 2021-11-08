@@ -6,7 +6,6 @@ import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Score;
 import org.bukkit.scoreboard.Scoreboard;
-
 import java.util.List;
 
 public class BoardManager {
@@ -26,8 +25,13 @@ public class BoardManager {
             score.setScore(translated.size() - i);
         }
 
+        ScoreboardData.setData(player, translated);
         objective.setDisplayName(title);
         objective.setDisplaySlot(DisplaySlot.SIDEBAR);
         player.setScoreboard(scoreboard);
+    }
+
+    public static void hideBoard(Player player) {
+        player.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
     }
 }

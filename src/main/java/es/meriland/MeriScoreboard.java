@@ -19,7 +19,7 @@ import java.util.*;
 public final class MeriScoreboard extends JavaPlugin {
 
     private static MeriScoreboard plugin;
-    public static List<String> untranslated;
+    public static List<String> untranslated, translated;
     public static String title;
     private File playersDataFile;
     private FileConfiguration playersData;
@@ -44,8 +44,12 @@ public final class MeriScoreboard extends JavaPlugin {
             }
             for(Player player : Bukkit.getOnlinePlayers()) {
                 if(getPlayersData().getBoolean(player.getUniqueId().toString())) {
-                    Bukkit.broadcastMessage("MOSTRANDO DESDE MAIN a " + player.getName());
-                    BoardManager.showBoard(player, Utils.translate(player, untranslated));
+                    translated = Utils.translate(player, untranslated);
+                    if(ScoreboardData.canUpdate(player, translated)) {
+                        Bukkit.broadcastMessage("MOSTRANDO DESDE MAIN a " + player.getName());
+                        BoardManager.showBoard(player, translated);
+                    }
+
                 }
             }
         }, 5L, 5L);

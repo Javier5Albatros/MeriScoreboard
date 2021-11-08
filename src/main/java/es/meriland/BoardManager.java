@@ -12,8 +12,6 @@ public class BoardManager {
 
 
     public static void showBoard(Player player, List<String> translated) {
-        Bukkit.broadcastMessage("MOSTRANDO DESDE showBoard a " + player.getName());
-
         Scoreboard scoreboard = Bukkit.getScoreboardManager().getNewScoreboard();
         Objective objective = scoreboard.registerNewObjective("meriScoreboard", "dummy");
         String title = Utils.colorize(Utils.cutString(MeriScoreboard.title, 32));

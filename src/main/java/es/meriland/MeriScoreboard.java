@@ -46,7 +46,6 @@ public final class MeriScoreboard extends JavaPlugin {
                 if(getPlayersData().getBoolean(player.getUniqueId().toString())) {
                     translated = Utils.translate(player, untranslated);
                     if(ScoreboardData.canUpdate(player, translated)) {
-                        Bukkit.broadcastMessage("MOSTRANDO DESDE MAIN a " + player.getName());
                         BoardManager.showBoard(player, translated);
                     }
 

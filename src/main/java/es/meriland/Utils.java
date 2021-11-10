@@ -23,4 +23,13 @@ public class Utils {
         return ChatColor.translateAlternateColorCodes('&', s);
     }
 
+    public static String messageFromConfig(String path) {
+        return colorize(MeriScoreboard.getPlugin().getConfig().getString("messages." + path));
+    }
+
+
+    public static List<String> getTranslated(Player player) {
+        return Utils.translate(player, MeriScoreboard.untranslated);
+    }
+
 }

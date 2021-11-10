@@ -23,7 +23,6 @@ public class BoardManager {
             score.setScore(translated.size() - i);
         }
 
-        ScoreboardData.setData(player, translated);
         objective.setDisplayName(title);
         objective.setDisplaySlot(DisplaySlot.SIDEBAR);
         player.setScoreboard(scoreboard);

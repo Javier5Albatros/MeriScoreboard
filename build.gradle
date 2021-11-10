@@ -3,7 +3,7 @@ plugins {
 }
 
 group = 'es.meriland'
-version = '1.0-SNAPSHOT'
+version = '1.1-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -23,6 +23,9 @@ repositories {
 dependencies {
     compileOnly 'org.spigotmc:spigot-api:1.17.1-R0.1-SNAPSHOT'
     compileOnly 'me.clip:placeholderapi:2.10.10'
+    implementation files('lib/GoldenChallenges-1.0-SNAPSHOT.jar')
+    implementation files('lib/NexEngine.jar')
+
 }
 
 def targetJavaVersion = 8

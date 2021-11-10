@@ -1,6 +1,5 @@
 package es.meriland.listeners;
 
-import es.meriland.MeriScoreboard;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

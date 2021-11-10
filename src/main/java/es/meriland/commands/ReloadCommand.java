@@ -10,13 +10,13 @@ public class ReloadCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(!sender.isOp()) {
-            sender.sendMessage(Utils.colorize("&c¡No tienes permiso!"));
+            sender.sendMessage(Utils.messageFromConfig("noPermission"));
             return false;
         }
         MeriScoreboard.getPlugin().reloadConfig();
         MeriScoreboard.untranslated = MeriScoreboard.getPlugin().getConfig().getStringList("scoreboard.lines");
         MeriScoreboard.title = MeriScoreboard.getPlugin().getConfig().getString("scoreboard.title");
-        sender.sendMessage(Utils.colorize("&a¡Reload completado!"));
+        sender.sendMessage(Utils.messageFromConfig("reloadCompleted"));
         return false;
     }
 }

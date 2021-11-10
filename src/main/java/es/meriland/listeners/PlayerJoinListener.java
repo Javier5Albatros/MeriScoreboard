@@ -16,11 +16,11 @@ public class PlayerJoinListener implements Listener {
         String uuid = event.getPlayer().getUniqueId().toString();
         if(plugin.getPlayersData().contains(uuid)) {
             if(plugin.getPlayersData().getBoolean(uuid)) {
-                BoardManager.showBoard(event.getPlayer(), Utils.translate(event.getPlayer(), MeriScoreboard.untranslated));
+                BoardManager.showBoard(event.getPlayer(), Utils.getTranslated(event.getPlayer()));
             }
         } else {
             plugin.setPlayerData(uuid, true);
-            BoardManager.showBoard(event.getPlayer(), Utils.translate(event.getPlayer(), MeriScoreboard.untranslated));
+            BoardManager.showBoard(event.getPlayer(), Utils.getTranslated(event.getPlayer()));
         }
     }
 }

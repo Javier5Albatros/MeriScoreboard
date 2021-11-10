@@ -19,10 +19,10 @@ public class ToggleScoreboardCommand implements CommandExecutor {
 
         if(toggled) {
             BoardManager.hideBoard(player);
-            player.sendMessage(Utils.colorize("&c¡Ocultando scoreboard!"));
+            player.sendMessage(Utils.messageFromConfig("disableScoreboard"));
         } else {
-            BoardManager.showBoard(player, Utils.translate(player, MeriScoreboard.untranslated));
-            player.sendMessage(Utils.colorize("&a¡Mostrando scoreboard!"));
+            BoardManager.showBoard(player, Utils.getTranslated(player));
+            player.sendMessage(Utils.messageFromConfig("enableScoreboard"));
         }
 
         plugin.setPlayerData(uuid, !toggled);

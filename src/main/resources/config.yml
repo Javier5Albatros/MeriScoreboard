@@ -1,8 +1,17 @@
 scoreboard: # Max 15 lines
   title: '&8>>&b&lDesafíos &8<<'
   lines:
-    - 'Progreso diario: %goldenchallenges_progress_DAILY%%'
-    - ''
-    - 'Progreso semanal: %goldenchallenges_progress_WEEKLY%%'
     - ' '
-    - 'Progreso mensual: %goldenchallenges_progress_MONTHLY%%'
+    - '%goldenchallenges_nombre_DAILY_1% - %goldenchallenges_progreso_daily_1%%'
+    - ' '
+    - '%goldenchallenges_nombre_DAILY_2% - %goldenchallenges_progreso_daily_2%%'
+    - ' '
+    - '%goldenchallenges_nombre_DAILY_3% - %goldenchallenges_progreso_daily_3%%'
+    - ' '
+    - 'Progreso total: %goldenchallenges_progress_DAILY%%'
+
+messages:
+  noPermission: '&c¡No tienes permiso para ejecutar este comando!'
+  reloadCompleted: '&aMeriScoreboard recargado con éxito'
+  enableScoreboard: '&eMostrando Scoreboard...'
+  disableScoreboard: '&eOcultando Scoreboard...'

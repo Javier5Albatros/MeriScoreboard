@@ -2,11 +2,10 @@ package es.meriland;
 
 import es.meriland.commands.ReloadCommand;
 import es.meriland.commands.ToggleScoreboardCommand;
-import es.meriland.listeners.PlayerDieListener;
+import es.meriland.listeners.ChallengeListener;
 import es.meriland.listeners.PlayerJoinListener;
 import es.meriland.listeners.PlayerQuitListener;
 import org.bukkit.Bukkit;
-import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -19,8 +18,8 @@ import java.util.*;
 public final class MeriScoreboard extends JavaPlugin {
 
     private static MeriScoreboard plugin;
-    public static List<String> untranslated, translated;
     public static String title;
+    public static List<String> untranslated;
     private File playersDataFile;
     private FileConfiguration playersData;
 
@@ -34,24 +33,9 @@ public final class MeriScoreboard extends JavaPlugin {
         Bukkit.getPluginCommand("togglescoreboard").setExecutor(new ToggleScoreboardCommand());
         Bukkit.getPluginManager().registerEvents(new PlayerQuitListener(), this);
         Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(), this);
-        Bukkit.getPluginManager().registerEvents(new PlayerDieListener(), this);
+        Bukkit.getPluginManager().registerEvents(new ChallengeListener(), this);
         createPlayersFile();
         saveDefaultConfig();
-
-        Bukkit.getScheduler().runTaskTimer(this, () -> {
-            if(Bukkit.getOnlinePlayers().isEmpty()) {
-                return;
-            }
-            for(Player player : Bukkit.getOnlinePlayers()) {
-                if(getPlayersData().getBoolean(player.getUniqueId().toString())) {
-                    translated = Utils.translate(player, untranslated);
-                    if(ScoreboardData.canUpdate(player, translated)) {
-                        BoardManager.showBoard(player, translated);
-                    }
-
-                }
-            }
-        }, 5L, 5L);
     }
 
     @Override
@@ -85,6 +69,5 @@ public final class MeriScoreboard extends JavaPlugin {
         }
         playersData = YamlConfiguration.loadConfiguration(playersDataFile);
     }
-
 
 }
